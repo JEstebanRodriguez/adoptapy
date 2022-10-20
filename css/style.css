@@ -404,6 +404,16 @@ body {
     font-size: 2.625rem;
 }
 
+.shop__title {
+    font-size: 2.625rem;
+}
+
+.shop__desc {
+    width: 60%;
+    line-height: 120%;
+    margin: 1rem 0;
+}
+
 .contact {
     padding: 2rem 1rem;
 }
@@ -594,6 +604,57 @@ body {
     width: 70%;
 }
 
+.shop {
+    padding: 3rem 1rem;
+}
+
+.shop__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.shop__grid-item {
+    padding: 1rem;
+    border: 1px solid var(--gray);
+    border-radius: var(--radius);
+}
+
+.shop__grid-item__img {
+    width: 12rem;
+    height: 12rem;
+    margin-bottom: 1rem;
+}
+.shop__grid-item__img img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.shop__grid-item span {
+    display: block;
+    margin: .5rem 0;
+    font-size: 1.5rem;
+}
+
+.shop__grid-item__footer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+
+
+
+
+@media (min-width: 640px) {
+    .shop__grid {
+        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    }
+}
+
+
 
 /* MEDIA QUERIE TABLET */
 @media (min-width: 768px) {
@@ -672,9 +733,11 @@ body {
     .adopt {
         padding: 2rem 3rem;
     }
-
     .animals__grid {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    .shop {
+        padding: 2rem 3rem;
     }
 }
 
@@ -714,6 +777,9 @@ body {
         padding: 2rem 6rem;
     }
     .adopt {
+        padding: 2rem 6rem;
+    }
+    .shop {
         padding: 2rem 6rem;
     }
     .animal-profile__body {
