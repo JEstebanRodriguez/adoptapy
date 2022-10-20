@@ -1,25 +1,26 @@
+// Funcion shorthand: Declaracion de los elementos del dom por su id
 const getById = (element) => document.getElementById(element);
-
-
+// Elementos del dom
 const header = getById('header');
 const headerMenu = getById('header-menu');
 const headerBurger = getById('header-burger');
-
+const animalProfile = getById('animal-profile');
+// Obtencion del access token de la api petfinder para realizar la peticion
 const tokenFromLocalStorage = localStorage.getItem('token');
+
+//Obtencion del query string de la url donde viene el id del animal
 const path = location.search;
+// separacion en un array del query string
 const getIdQueryString = path.split('=');
-console.log(getIdQueryString);
+// Obtencion del segundo valor del array en donde se encuentra el string con el id del animal
 let animalId = getIdQueryString[1];
+// declaracion de la variable placeholder que contendra la imagen del perfil del animal
 let placeholder;
 
+// Creacion del elemento del perfil para insertar en el dom con los datos del animal por su id
 const setElementsAtDom = (animalParam) => {
     document.querySelector('title').innerText = animalParam.name;
-    if (animalParam.photos.length) {
-        placeholder = animalParam.photos[0]?.medium;
-    } else {
-        placeholder = 'img/cat-placeholder.svg';
-    }
-
+    (animalParam.photos.length) ? placeholder = animalParam.photos[0]?.medium : placeholder = 'img/cat-placeholder.svg';
     const el = `<div class="animal-profile__avatar">
                 <img src=${placeholder} alt="Foto de Perfil del animal">
                 <span class="badge">${animalParam.status}</span>
@@ -64,9 +65,8 @@ const setElementsAtDom = (animalParam) => {
                     <li><strong>Telefono:</strong> <a href="#">${animalParam.contact.phone }</a></li>
                 </ul>
             </div>`;
-    document.getElementById('animal-profile').innerHTML = el;
+    animalProfile.innerHTML = el;
 }
-
 const getAnimalById = async () => {
     const resp = await fetch(`https://api.petfinder.com/v2/animals/${animalId}`, {
         headers: {
@@ -77,26 +77,13 @@ const getAnimalById = async () => {
     console.log(animal);
     setElementsAtDom(animal);
 }
-
-
 // Listener en el cual se muestra u oculta el sidebar en el responsive
 headerBurger.addEventListener('click', () => {
     headerBurger.classList.toggle('header__burger--active');
     headerMenu.classList.toggle('header__menu--active');
 });
-
-// Listener donde se obtiene el evento de scroll de la pagina
-document.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    if (scrollY >= 280) {
-        // se agrega el efecto de blur al header
-        header.classList.add('header--mask');
-    } else {
-        // se quita el efecto de blur al header
-        header.classList.remove('header--mask');
-    }
-});
-
+// Listener donde se obtiene el evento de scroll de la pagina y aplica el blur al header
+document.addEventListener('scroll', () => (scrollY >= 280) ? header.classList.add('header--mask') : header.classList.remove('header--mask'));
 document.addEventListener('DOMContentLoaded', () => {
     getAnimalById();
 })
