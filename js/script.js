@@ -16,6 +16,8 @@ const dogsArea = getById('dogs-area');
 const catsArea = getById('cats-area');
 const cardBtn = getById('card-btn');
 
+const loader = document.querySelector('.loader');
+
 // Declaracion de variable para mostrar una imagen por defecto de la mascota, en caso de que la api no la provea.
 let placeholderImg;
 // Funcion shorthand: para pasar elementos padres y hacerle un appendchild
@@ -30,6 +32,7 @@ const getAnimal = (animalId) => {
 
 // Funcion para crear las cards de mascotas (perros/gatos)
 const listItemCreator = (data) => {
+    loader.style.display = 'none';
     // loop del parametro que trae un array de objetos con los datos de la api
     data.map(el => {
         // Consulta para preguntar por el tipo de animal y cargar su imagen por defecto si la api no la provee
@@ -79,7 +82,6 @@ const getDataCats = async (accesToken) => {
     });
     const {animals} = await resp.json();
     listItemCreator(animals);
-
 }
 
 // Peticion post en la cual se envian las credenciales para generar un nuevo token para las peticiones
@@ -128,6 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // se genera el access token para poder hacer peticiones a la api
     refreshTokenGenerator();
     // se vuelve a generar un nuevo access token cuando el anterior se vence. Se vuelve a ejecutar la peticion para generar un nuevo token en intervalos de una hora. Para que se pueda probar.
+    loader.style.display = 'block';
+
     setInterval(() => {
         refreshTokenGenerator();
     }, 3600000);

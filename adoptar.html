@@ -5,11 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script src="js/script.js" defer></script>
-    <title>AdoptaPY</title>
+    <title>Quiero Adoptar</title>
 </head>
 
 <body>
@@ -23,6 +20,7 @@
                 <li class="header__menu-item"><a href="dogs.html" class="header__menu-link">Perros</a></li>
                 <li class="header__menu-item"><a href="cats.html" class="header__menu-link">Gatos</a></li>
                 <li class="header__menu-item"><a href="contact.html" class="header__menu-link">Consultas</a></li>
+                <!-- <li class="header__menu-item"><a href="/gatos.html" class="header__menu-link">Donar</a></li> -->
             </ul>
             <div class="header__menu-footer">
                 <span>Desarrollado por:</span>
@@ -36,10 +34,33 @@
         </div>
     </header>
     <main class="content">
-        <section class="animals animals--cats">
-            <h1 class="animals__title">Gatos</h1>
-            <div class="animals__grid" id="cats-area">
-                <div class="loader"></div>
+        <section class="adopt">
+            <h1 class="adopt__title">Adopta ¡Ganamos todos!</h1>
+            <p>¡Gracias por pensar en adoptar en el refugio! Nuestro objetivo principal es poder encontrarles un hogar
+                permanente lleno de amor a cada una de las mascotas de nuestro refugio.
+            </p>
+            <p>A través de la historia, las mascotas han sido grandes compañeras de la vida de las personas,
+                compartiendo alegrías, pero también ayudando a superar momentos difíciles.</p>
+            <h2 class="adopt__h2 mt-2">Conoce a nuestros huespedes</h2>
+            <div class="adopt__grid">
+                <div class="adopt__grid-item">
+                    <div class="adopt__grid-item__img">
+                        <img src="img/pastor-aleman.png" alt="imagen de un perro">
+                    </div>
+                    <div class="adopt__grid-item__action">
+                        <h2>Perros</h2>
+                        <a href="dogs.html" class="btn btn--primary">Quiero verlos</a>
+                    </div>
+                </div>
+                <div class="adopt__grid-item">
+                    <div class="adopt__grid-item__img">
+                        <img src="img/cat.png" alt="imagen de un gato">
+                    </div>
+                    <div class="adopt__grid-item__action">
+                        <h2>Gatos</h2>
+                        <a href="cats.html" class="btn btn--primary">Quiero verlos</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

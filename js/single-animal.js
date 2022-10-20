@@ -46,7 +46,7 @@ const setElementsAtDom = (animalParam) => {
                 </ul>
             </div>
             <div class="animal-profile__body">
-                <h2 class="animal-profile__header-desc">Descripcion</h2>
+                <h2 class="animal-profile__header-desc">Descripción</h2>
                 <p id="animal-description">${ animalParam.description ? animalParam.description : 'No tiene descripción'}</p>
                 ${animalParam.tags.length ? `<h3> Características</h3>
                 <ul class="tags-ul">
