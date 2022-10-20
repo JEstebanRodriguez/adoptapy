@@ -13,6 +13,7 @@ let animalId = getIdQueryString[1];
 let placeholder;
 
 const setElementsAtDom = (animalParam) => {
+    document.querySelector('title').innerText = animalParam.name;
     if (animalParam.photos.length) {
         placeholder = animalParam.photos[0]?.medium;
     } else {
@@ -46,24 +47,21 @@ const setElementsAtDom = (animalParam) => {
             </div>
             <div class="animal-profile__body">
                 <h2 class="animal-profile__header-desc">Descripcion</h2>
-                <p id="animal-description">${ animalParam.description }</p>
-                ${ animalParam.tags.length ? `<h3> Atributos</h3>
-        <ul class="tags-ul">
-            ${animalParam.tags?.map(tag => `<li> ${tag}</li>`)}
-        </ul>`: '' }
-                <h3>Perfil de Sitio de Adopcion</h3>
-                <a href="">Perfil de Nombre en petfinder</a>
-                <h3>Mis Fotos</h4>
-                <div class="animal-profile__grid">
-                    <div class="animal-profile__grid-item">asda</div>
-                    <div class="animal-profile__grid-item">asda</div>
-                    <div class="animal-profile__grid-item">asda</div>
-                    <div class="animal-profile__grid-item">asda</div>
-                </div>
-                <h3>Contactos para saber mas sobre Mi</h3>
-                <ul>
-                    <li>dasdasd</li>
-                    <li>asdasda</li>
+                <p id="animal-description">${ animalParam.description ? animalParam.description : 'No tiene descripción'}</p>
+                ${animalParam.tags.length ? `<h3> Características</h3>
+                <ul class="tags-ul">
+                    ${animalParam.tags?.map(tag => `<li>- ${tag}</li>`).join('')}
+                </ul>`: '' }
+                <h3>Perfil de Sitio de Adopción</h3>
+                <a href=${ animalParam.url} class="d-block mt-0-5" target="_blank">Ir al perfil de ${animalParam.name} en petfinder</a>
+                <h3 class="mt-1">Mis Fotos</h4>
+                ${animalParam.photos.length ? `<div class="animal-profile__grid">
+                    ${animalParam.photos?.map(photo => `<div class="animal-profile__grid-item"><img src=${photo.medium} /></div>`).join('')}
+                </div>` : `<p>No se encontraron fotos de ${animalParam.name}</p>`}
+                <h3>Contactos para saber más sobre Mi</h3>
+                <ul class="tags-ul">
+                    <li><strong>Email:</strong> <a href="#">${animalParam.contact.email}</a></li>
+                    <li><strong>Telefono:</strong> <a href="#">${animalParam.contact.phone }</a></li>
                 </ul>
             </div>`;
     document.getElementById('animal-profile').innerHTML = el;
@@ -85,6 +83,18 @@ const getAnimalById = async () => {
 headerBurger.addEventListener('click', () => {
     headerBurger.classList.toggle('header__burger--active');
     headerMenu.classList.toggle('header__menu--active');
+});
+
+// Listener donde se obtiene el evento de scroll de la pagina
+document.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    if (scrollY >= 280) {
+        // se agrega el efecto de blur al header
+        header.classList.add('header--mask');
+    } else {
+        // se quita el efecto de blur al header
+        header.classList.remove('header--mask');
+    }
 });
 
 document.addEventListener('DOMContentLoaded', () => {
