@@ -107,6 +107,9 @@
         font-size: 1rem;
         color: var(--dark);
     }
+    .header__menu-link.header__menu-link--active {
+        color: var(--primary);
+    }
     .header__menu-footer {
         display: none;
     }
