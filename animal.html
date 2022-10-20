@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/single-animal.js" defer></script>
     <title>Nombre del Animal</title>
 </head>
@@ -35,9 +36,6 @@
     </header>
     <main class="content">
         <div class="animal-profile" id="animal-profile"></div>
-        <div class="adopt-btn">
-            <button class="btn btn--primary">Formulario de Adopción</button>
-        </div>
     </main>
     <footer class="footer">
         <span class="footer__dev">Desarrollado por: <a href="https://github.com/xjdevx/adoptapy" target="_blank">Juan
@@ -48,5 +46,48 @@
             <span>2022</span>
         </div>
     </footer>
+    <div class="modal" id="modal">
+        <div class="modal__content">
+            <div class="modal__content-header">
+                <h3>Formulario de Adopción</h3>
+            </div>
+            <div class="modal__content-body">
+                <form class="form" id="adopt-form" method="POST">
+                    <div class="form__group">
+                        <label for="name">Nombre <small class="text-red">Campo Obligatorio</small></label>
+                        <input type="text" id="name" value="Juan Rodriguez" class="form__input"
+                            placeholder="Ingrese su nombre">
+                    </div>
+                    <div class="form__group">
+                        <label for="email">Email <small class="text-red">Campo Obligatorio</small></label>
+                        <input type="email" id="email" class="form__input" value="lic.juan94@gmail.com"
+                            placeholder="Ingrese su email">
+                    </div>
+                    <div class="form__group">
+                        <label for="telefono">Número de Telefono <small class="text-red">Campo Obligatorio</small></label>
+                        <input type="text" id="phone" class="form__input" value="0986-236-788"
+                            placeholder="Ingrese su telefono">
+                    </div>
+                    <div class="form__group">
+                        <label for="other-pets">Tenes otras mascotas?</label>
+                        <div class="form__flex">
+                            <label label="yes"><input type="radio" name="other-pets" id="yes" checked> Si</label>
+                            <label for="no"><input type="radio" name="other-pets" id="no"> No</label>
+                        </div>
+                    </div>
+                    <div class="form__group">
+                        <label for="message">Contanos por que queres adoptar <small class="text-red">Campo
+                                Obligatorio</small></label>
+                        <textarea name="message" id="message" class="form__textarea" cols="30" rows="2"
+                            placeholder="Ingrese su mensaje">Ingrese una descripcion del motivo del porque queres adoptar una mascota</textarea>
+                    </div>
+                    <div class="form__group">
+                        <button type="submit" class="btn btn--primary">Enviar Formulario</button>
+                        <button type="submit" class="btn btn--ghost" id="cancel-adopt">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

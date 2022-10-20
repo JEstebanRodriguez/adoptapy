@@ -479,7 +479,7 @@ body {
 }
 
 .animal-profile {
-    padding: 2rem;
+    padding: 1rem;
     width: 100%;
     display: grid;
     place-items: center;
@@ -549,6 +549,7 @@ body {
 
 .tags-ul {
     display: flex;
+    flex-direction: column;
     margin: 1rem 0;
     gap: 1rem;
 }
@@ -652,6 +653,35 @@ body {
     justify-content: space-between;
 }
 
+.form__flex {
+    display: flex;
+    gap: 1rem;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.6);
+    backdrop-filter: blur(10px);
+    z-index: 10;
+    place-items: center;
+    display: none;
+}
+
+.modal__content {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: var(--radius);
+    min-width: 35%;
+}
+
+
+
+
+
 @media (min-width: 640px) {
     .shop__grid {
         grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
@@ -748,6 +778,9 @@ body {
     }
     .shop__desc {
         width: 60%;
+    }
+    .tags-ul {
+        flex-direction: row;
     }
 }
 

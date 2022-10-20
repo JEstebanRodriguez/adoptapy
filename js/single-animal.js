@@ -5,6 +5,9 @@ const header = getById('header');
 const headerMenu = getById('header-menu');
 const headerBurger = getById('header-burger');
 const animalProfile = getById('animal-profile');
+const modal = getById('modal');
+const cancelAdoptBtn = getById('cancel-adopt');
+const adoptForm = getById('adopt-form');
 // Obtencion del access token de la api petfinder para realizar la peticion
 const tokenFromLocalStorage = localStorage.getItem('token');
 
@@ -61,11 +64,15 @@ const setElementsAtDom = (animalParam) => {
                 </div>` : `<p>No se encontraron fotos de ${animalParam.name}</p>`}
                 <h3 class="mt-2">Contactos para saber más sobre Mi</h3>
                 <ul class="tags-ul">
-                    <li><strong>Email:</strong> <a href="#">${animalParam.contact.email}</a></li>
-                    <li><strong>Telefono:</strong> <a href="#">${animalParam.contact.phone }</a></li>
+                    <li><strong>Email:</strong> <a href="#">${animalParam.contact.email ? animalParam.contact.email : 'No definido'}</a></li>
+                    <li><strong>Telefono:</strong> <a href="#">${animalParam.contact.phone ? animalParam.contact.phone : 'No definido' }</a></li>
                 </ul>
+                <button class="btn btn--primary" id="adopt-form">Formulario de adopción</button>
             </div>`;
     animalProfile.innerHTML = el;
+    document.getElementById('adopt-form').addEventListener('click', () => {
+        modal.style.display = 'grid';
+    });
 }
 // Peticion a la api de petfinder para la obtencion de los datos del animal por su id
 const getAnimalById = async () => {
@@ -87,4 +94,22 @@ headerBurger.addEventListener('click', () => {
 document.addEventListener('scroll', () => (scrollY >= 280) ? header.classList.add('header--mask') : header.classList.remove('header--mask'));
 document.addEventListener('DOMContentLoaded', () => {
     getAnimalById();
-})
+});
+
+cancelAdoptBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.style.display = 'none';
+});
+
+adoptForm.addEventListener('submit', e => {
+    e.preventDefault();
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Petición realizada con exito',
+        text: 'En breve nos comunicaremos contigo',
+        showConfirmButton: false,
+        timer: 2000
+    });
+    modal.style.display = 'none';
+});
