@@ -54,11 +54,11 @@ const setElementsAtDom = (animalParam) => {
                 </ul>`: '' }
                 <h3>Perfil de Sitio de Adopción</h3>
                 <a href=${ animalParam.url} class="d-block mt-0-5" target="_blank">Ir al perfil de ${animalParam.name} en petfinder</a>
-                <h3 class="mt-1">Mis Fotos</h4>
+                <h3 class="mt-2">Mis Fotos</h4>
                 ${animalParam.photos.length ? `<div class="animal-profile__grid">
                     ${animalParam.photos?.map(photo => `<div class="animal-profile__grid-item"><img src=${photo.medium} /></div>`).join('')}
                 </div>` : `<p>No se encontraron fotos de ${animalParam.name}</p>`}
-                <h3>Contactos para saber más sobre Mi</h3>
+                <h3 class="mt-2">Contactos para saber más sobre Mi</h3>
                 <ul class="tags-ul">
                     <li><strong>Email:</strong> <a href="#">${animalParam.contact.email}</a></li>
                     <li><strong>Telefono:</strong> <a href="#">${animalParam.contact.phone }</a></li>

@@ -24,6 +24,9 @@
 .mt-1 {
     margin-top: 1rem;
 }
+.mt-2 {
+    margin-top: 2rem;
+}
 
 .content {
     margin-top: 4rem;
@@ -241,6 +244,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 1rem;
 }
 
 .contact h4 {
@@ -348,6 +352,14 @@ body {
 }
 
 .animals__title {
+    font-size: 2.625rem;
+}
+
+.contact {
+    padding: 2rem 1rem;
+}
+
+.contact__title {
     font-size: 2.625rem;
 }
 
@@ -486,13 +498,11 @@ body {
     gap: 1rem;
 }
 
-.animal-profile__grid-item {
-}
-
 .animal-profile__grid-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: var(--radius);
 }
 
 
@@ -567,6 +577,9 @@ body {
     .animals {
         padding: 2rem 3rem;
     }
+    .contact {
+        padding: 2rem 3rem;
+    }
 
     .animals__grid {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -603,6 +616,9 @@ body {
     }
 
     .animals {
+        padding: 2rem 6rem;
+    }
+    .contact {
         padding: 2rem 6rem;
     }
     .animal-profile__body {

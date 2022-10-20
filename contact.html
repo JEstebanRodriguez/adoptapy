@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="js/contact.js" defer></script>
+    <title>Consultas</title>
+</head>
+
+<body>
+    <header class="header" id="header">
+        <a class="header__brand" href="index.html">
+            <img src="./img/logo.svg" alt="logo de adoptapy">
+        </a>
+        <nav class="header__menu" id="header-menu">
+            <ul class="header__menu-list">
+                <li class="header__menu-item"><a href="perros.html" class="header__menu-link">¿Quienes Somos?</a></li>
+                <li class="header__menu-item"><a href="dogs.html" class="header__menu-link">Perros</a></li>
+                <li class="header__menu-item"><a href="cats.html" class="header__menu-link">Gatos</a></li>
+                <li class="header__menu-item"><a href="contact.html" class="header__menu-link">Consultas</a></li>
+                <!-- <li class="header__menu-item"><a href="/gatos.html" class="header__menu-link">Donar</a></li> -->
+            </ul>
+            <div class="header__menu-footer">
+                <span>Desarrollado por:</span>
+                <a href="" target="_blank">Juan Rodriguez</a>
+            </div>
+        </nav>
+        <div class="header__burger" id="header-burger">
+            <span class="header__burger-line header__burger-line--1"></span>
+            <span class="header__burger-line header__burger-line--2"></span>
+            <span class="header__burger-line header__burger-line--3"></span>
+        </div>
+    </header>
+    <main class="content">
+        <section class="contact">
+            <h1 class="contact__title">Consultas</h1>
+            <div class="contact__body">
+                <div class="contact__box--1">
+                    <p>Si tenes alguna duda o queres consultar alguna info envianos un email y nos comunicaremos contigo
+                        en la
+                        brevead
+                        posible.</p>
+                    <form class="form">
+                        <div class="form__group">
+                            <label for="name">Nombre</label>
+                            <input type="text" class="form__input" placeholder="Ingrese su nombre">
+                        </div>
+                        <div class="form__group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form__input" placeholder="Ingrese su email">
+                        </div>
+                        <div class="form__group">
+                            <label for="message">Mensaje</label>
+                            <textarea name="message" class="form__textarea" cols="30" rows="2"
+                                placeholder="Ingrese su mensaje"></textarea>
+                        </div>
+                        <div class="form__group">
+                            <button type="submit" class="btn btn--primary">Enviar Mensaje</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="contact__box--2">
+                    <h5 class="contact__box--2__title">También nos encontras en:</h5>
+                    <ul class="socials">
+                        <li class="socials__item"><a class="socials__item-link" href="#">
+                                <ion-icon name="logo-instagram"></ion-icon><span>Adopta.PY</span>
+                            </a></li>
+                        <li class="socials__item"><a class="socials__item-link" href="#">
+                                <ion-icon name="logo-twitter"></ion-icon><span>Adopta_PY</span>
+                            </a></li>
+                        <li class="socials__item"><a class="socials__item-link" href="#">
+                                <ion-icon name="logo-whatsapp"></ion-icon><span>Numero de Telefono</span>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <span class="footer__dev">Desarrollado por: <a href="https://github.com/adoptapy" target="_blank">Juan
+                Rodriguez</a></span>
+        <div class="footer__info">
+            <span>Pre-entrenamiento Bootcamp</span>
+            <a href="https://programandopy.org" target="_blank">Programando Paraguay</a>
+            <span>2022</span>
+        </div>
+    </footer>
+</body>
+
+</html>
