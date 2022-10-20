@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/contact.js" defer></script>
     <title>Consultas</title>
 </head>
@@ -45,19 +46,19 @@
                         en la
                         brevead
                         posible.</p>
-                    <form class="form">
+                    <form class="form" id="contact-form">
                         <div class="form__group">
-                            <label for="name">Nombre</label>
-                            <input type="text" class="form__input" placeholder="Ingrese su nombre">
+                            <label for="name">Nombre <small class="text-red">Campo Obligatorio</small></label>
+                            <input type="text" id="name" value="Juan Rodriguez" class="form__input" placeholder="Ingrese su nombre">
                         </div>
                         <div class="form__group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form__input" placeholder="Ingrese su email">
+                            <label for="email">Email <small class="text-red">Campo Obligatorio</small></label>
+                            <input type="email" id="email" class="form__input" value="lic.juan94@gmail.com" placeholder="Ingrese su email">
                         </div>
                         <div class="form__group">
-                            <label for="message">Mensaje</label>
-                            <textarea name="message" class="form__textarea" cols="30" rows="2"
-                                placeholder="Ingrese su mensaje"></textarea>
+                            <label for="message">Mensaje <small class="text-red">Campo Obligatorio</small></label>
+                            <textarea name="message" id="message" class="form__textarea" cols="30" rows="2"
+                                placeholder="Ingrese su mensaje">Quiero saber mas sobre el refugio</textarea>
                         </div>
                         <div class="form__group">
                             <button type="submit" class="btn btn--primary">Enviar Mensaje</button>

@@ -67,6 +67,7 @@ const setElementsAtDom = (animalParam) => {
             </div>`;
     animalProfile.innerHTML = el;
 }
+// Peticion a la api de petfinder para la obtencion de los datos del animal por su id
 const getAnimalById = async () => {
     const resp = await fetch(`https://api.petfinder.com/v2/animals/${animalId}`, {
         headers: {

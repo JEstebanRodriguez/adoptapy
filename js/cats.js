@@ -34,7 +34,6 @@ const listItemCreator = (data) => {
                 <div class="card__body-info">
                 <span class="card__body-gender"><strong>Sexo:</strong> ${el.gender === 'female' ? 'Hembra' : 'Macho'} </span>
                 <span class="card__body-age"><strong>Edad:</strong> ${el.age}</span>
-                <span class="card__body-status"><strong>Estado:</strong> ${el.status}</span>
                 </div>
                 </div>
                 <div class="card__actions">
