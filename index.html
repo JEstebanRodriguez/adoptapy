@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="js/script.js" defer></script>
+    <title>AdoptaPY</title>
+</head>
+<body>
+    <header class="header" id="header">
+        <a class="header__brand" href="index.html">
+            <img src="./img/logo.svg" alt="logo de adoptapy">
+        </a>
+        <nav class="header__menu" id="header-menu">
+            <ul class="header__menu-list">
+                <li class="header__menu-item"><a href="perros.html" class="header__menu-link">¿Quienes Somos?</a></li>
+                <li class="header__menu-item"><a href="dogs.html" class="header__menu-link">Perros</a></li>
+                <li class="header__menu-item"><a href="cats.html" class="header__menu-link">Gatos</a></li>
+                <li class="header__menu-item"><a href="contact.html" class="header__menu-link">Consultas</a></li>
+                <!-- <li class="header__menu-item"><a href="/gatos.html" class="header__menu-link">Donar</a></li> -->
+            </ul>
+            <div class="header__menu-footer">
+                <span>Desarrollado por:</span>
+                <a href="" target="_blank">Juan Rodriguez</a>
+            </div>
+        </nav>
+        <div class="header__burger" id="header-burger">
+            <span class="header__burger-line header__burger-line--1"></span>
+            <span class="header__burger-line header__burger-line--2"></span>
+            <span class="header__burger-line header__burger-line--3"></span>
+        </div>
+    </header>
+    <main class="content">
+        <section class="hero">
+            <div class="hero__box hero__box--1">
+                <h1 class="h-jumbo">Una segunda <span>oportunidad para</span> los <span>animales</span> abandonados</h1>
+                <a class="btn btn--primary mr-1">Quiero Adoptar</a>
+                <a class="btn btn--ghost">Jornadas de adopción</a>
+            </div>
+            <div class="hero__box hero__box--2">
+                <img src="img/pets.png" alt="imagen de mascotas">
+            </div>
+        </section>
+        <section class="support">
+            <h2 class="support__title">Apoyan</h2>
+            <ul class="support__list">
+                <li><img src="img/logo-purina.png" class="support__list-img" alt="logo de purina"></li>
+                <li><img src="img/petfinder.png" class="support__list-img" alt="logo de petfinder"></li>
+                <li><img src="img/jr.png" class="support__list-img" alt="logo de juan rodriguez"></li>
+            </ul>
+        </section>
+    <section class="info">
+        <div class="info__box--1">
+            <img src="img/perro-tapado.png" alt="imagen de un perro">
+            <div class="info__box--1__pill">
+                <h3>¿Por qué adoptar?</h3>
+                <p>Al adoptar una mascota, le das una segunda esperanza para vivir en un hogar lleno de amor. El abandono y las pérdidas de perros y gatos constituyen el principal obstáculo de bienestar de los animales de compañía en nuestro país.</p>
+            </div>
+        </div>
+        <div class="info__box--2">
+            <h2>¿Quienes somos?</h2>
+            <p>Somos una asociación sin fines de lucro que se encarga del rescate, el cuidado y albergue de animales abandonados a su suerte, y los acompañamos en el proceso de adaptación a nuevas familias.</p>
+            <a href="" class="btn btn--white">No puedo adoptar pero quiero ayudar</a>
+        </div>
+    </section>
+    <section class="huespedes">
+        <h3>Conoce a los integrantes del refugio</h3>
+        <div class="huespedes__grid">
+            <a href="">
+                <div class="huespedes__grid-item" style="background-image: url(img/dog-card.png);">
+                    <span>Perros</span>
+                </div>
+            </a>
+            <a href="">
+                <div class="huespedes__grid-item" style="background-image: url(img/cat-card.png);">
+                    <span>Gatos</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h4>Consultas</h4>
+        <div class="contact__body">
+            <div class="contact__box--1">
+                <p>Si tenes alguna duda o queres consultar alguna info envianos un email y nos comunicaremos contigo en la brevead
+                    posible.</p>
+                <form class="form">
+                    <div class="form__group">
+                        <label for="name">Nombre</label>
+                        <input type="text" class="form__input" placeholder="Ingrese su nombre">
+                    </div>
+                    <div class="form__group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form__input" placeholder="Ingrese su email">
+                    </div>
+                    <div class="form__group">
+                        <label for="message">Mensaje</label>
+                        <textarea name="message" class="form__textarea" cols="30" rows="2"
+                            placeholder="Ingrese su mensaje"></textarea>
+                    </div>
+                    <div class="form__group">
+                        <button type="submit" class="btn btn--primary">Enviar Mensaje</button>
+                    </div>
+                </form>
+            </div>
+            <div class="contact__box--2">
+                <h5 class="contact__box--2__title">También nos encontras en:</h5>
+                <ul class="socials">
+                    <li class="socials__item"><a class="socials__item-link" href="#"><ion-icon name="logo-instagram"></ion-icon><span>Adopta.PY</span></a></li>
+                    <li class="socials__item"><a class="socials__item-link" href="#"><ion-icon name="logo-twitter"></ion-icon><span>Adopta_PY</span></a></li>
+                    <li class="socials__item"><a class="socials__item-link" href="#"><ion-icon name="logo-whatsapp"></ion-icon><span>Numero de Telefono</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+        <!-- <ul id="animal">
+
+        </ul> -->
+    </main>
+    <footer class="footer">
+        <span class="footer__dev">Desarrollado por: <a href="https://github.com/adoptapy" target="_blank">Juan Rodriguez</a></span>
+        <div class="footer__info">
+            <span>Pre-entrenamiento Bootcamp</span>
+            <a href="https://programandopy.org" target="_blank">Programando Paraguay</a>
+            <span>2022</span>
+        </div>
+    </footer>
+</body>
+</html>

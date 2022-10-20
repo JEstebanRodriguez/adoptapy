@@ -1,0 +1,12 @@
+:root {
+    --primary: #5b45a5;
+    --primaryHover: #47328d;
+    --secondary: #D4C1EC;
+    --light: #FEF9FF;
+    --dark: #111316;
+    --black: #000000;
+    --white: #ffffff;
+    --fontFamily: 'Rubik', sans-serif;
+    --radius: .375rem;
+    --gray: #DCDCDC;
+}

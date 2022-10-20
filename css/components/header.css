@@ -1,0 +1,123 @@
+.header {
+    padding: .5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4.375rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--white);
+    z-index: 2;
+}
+
+.header.header--mask {
+    background-color: transparent;
+    backdrop-filter: blur(80px) saturate(180%);
+}
+
+.header__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-height: 100vh;
+    background-color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    transform: translateX(-100%);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) .5s;
+    z-index: 1;
+}
+
+.header__menu.header__menu--active {
+    transform: translateX(0);
+}
+
+.header__menu-item {
+    margin-bottom: 1.5rem;
+}
+
+.header__menu-link {
+    font-size: 1.2rem;
+    color: var(--light);
+}
+
+.header__menu-link:hover {
+    color: #7f64d4;
+}
+
+.header__menu-footer {
+    display: flex;
+    flex-direction: column;
+    color: var(--light);
+    font-size: .875rem;
+    gap: .5rem;
+}
+
+.header__menu-footer a {
+    text-decoration: underline;
+    color: #32bbdd;
+}
+
+.header__burger {
+    cursor: pointer;
+    z-index: 2;
+}
+
+.header__burger-line {
+    width: 2rem;
+    height: 0.3rem;
+    display: block;
+    border-radius: 100vmax;
+    margin-bottom: 0.2rem;
+    background-color: var(--black);
+}
+
+.header__burger.header__burger--active > .header__burger-line {
+    background-color: var(--light);
+}
+
+/* media queries */
+@media (min-width: 768px) {
+     .header {
+        padding: 0.5rem 2rem;
+    }
+    .header__menu {
+        position: unset;
+        background-color: transparent;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: .5rem 1rem;
+        align-items: center;
+        transform: translateX(0);
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1) .5s;
+    }
+    .header__menu-list {
+        display: flex;
+        gap: 2rem;
+    }
+    .header__menu-item {
+        margin-bottom: 0;
+    }
+    .header__menu-link {
+        font-size: 1rem;
+        color: var(--dark);
+    }
+    .header__menu-footer {
+        display: none;
+    }
+
+    .header__burger {
+        display: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .header {
+        padding: 0.5rem 6rem !important;
+    }
+}
