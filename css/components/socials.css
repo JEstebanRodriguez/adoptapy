@@ -1,0 +1,19 @@
+.socials {
+    margin: 1rem 0;
+}
+
+.socials__item {
+    margin-bottom: 1rem;
+}
+
+.socials__item-link {
+    display: flex;
+    align-items: center;
+    color: var(--dark);
+    gap: .5rem;
+    font-size: 1.125rem;
+}
+
+.socials__item-link:hover {
+    text-decoration: underline;
+}

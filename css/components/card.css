@@ -1,0 +1,30 @@
+.card {
+    border-radius: var(--radius);
+    border: 1px solid var(--gray);
+    box-shadow: 0px 2px 3px rgba(0,0,0,.1);
+}
+.card__img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-top-left-radius: .375rem;
+    border-top-right-radius: .375rem;
+}
+.card__body {
+    padding: 1rem;
+}
+.card__body span {
+    display: block;
+    margin: .2rem 0;
+}
+.card__body-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card__actions {
+    padding: .5rem 1rem;
+}
+.card__body-title {
+    font-size: 1.5rem;
+}

@@ -1,0 +1,57 @@
+.huespedes {
+    padding: 5rem 1rem;
+}
+
+.huespedes h3 {
+    font-size: 2rem;
+    display: grid;
+    place-items: center;
+}
+
+.huespedes__grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 3rem 0;
+    gap: 2rem;
+}
+
+.huespedes__grid-item {
+    padding: 2rem;
+    border-radius: var(--radius);
+    height: 21.25rem;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) .3s;
+}
+
+.huespedes__grid-item span {
+    display: grid;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: var(--white);
+    place-content: center;
+    font-size: 1.5rem;
+    background: linear-gradient(transparent, rgba(0,0,0,.9));
+    border-radius: var(--radius);
+}
+
+.huespedes__grid-item:hover {
+    transform: translateY(-10px);
+}
+
+@media (min-width: 768px) {
+    .huespedes__grid {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .huespedes__grid-item {
+        width: 15.625rem;
+    }
+}

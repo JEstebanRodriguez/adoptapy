@@ -1,0 +1,26 @@
+.support {
+    display: grid;
+    place-items: center;
+    filter: grayscale(100%) opacity(60%);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.support__list {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+.support__list-img {
+    width: 6rem;
+}
+
+@media (min-width: 768px) {
+    .support__list {
+        gap: 3rem;
+    }
+    .support__list-img {
+        width: 10rem;
+    }
+}

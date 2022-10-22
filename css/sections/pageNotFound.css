@@ -1,0 +1,8 @@
+.page-not-found {
+    display: grid;
+    place-items: center;
+    place-content: center;
+}
+.page-not-found img {
+    width: 100%;
+}
