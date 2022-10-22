@@ -41,8 +41,8 @@ const listItemCreator = (data) => {
             </div>`;
         catsArea.appendChild(listElement);
     });
-
 }
+// Funcion que se encarga de hacer la peticion a la api para recibir los gatos
 const getDataCats = async (accesToken) => {
     const resp = await fetch('https://api.petfinder.com/v2/animals?type=cat', {
         headers: {
@@ -50,6 +50,7 @@ const getDataCats = async (accesToken) => {
         }
     });
     const { animals } = await resp.json();
+    // Una vez que los datos son obtenidos se llama a la funcion para crear los cards con los datos del gato
     listItemCreator(animals);
 }
 

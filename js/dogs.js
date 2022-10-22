@@ -40,14 +40,16 @@ const listItemCreator = (data) => {
         dogsArea.appendChild(listElement);
     });
 }
+// Funcion que hace la peticion a la api para recibir un listado de los perros
 const getDataDogs = async (accesToken) => {
     const resp = await fetch('https://api.petfinder.com/v2/animals?type=dog', {
         headers: {
             Authorization: `Bearer ${accesToken}`
         }
     });
+    // desestructuracion para obtener los animales dentro de la data que devuelve la api
     const { animals } = await resp.json();
-    console.log(animals);
+    // funcion que se encarga de crear las cards con los datos de los perros que se reciben de la api
     listItemCreator(animals);
 }
 // Peticion post en la cual se envian las credenciales para generar un nuevo token para las peticiones
@@ -57,6 +59,7 @@ const refreshTokenGenerator = async () => {
         headers: {
             'Content-type': 'application/json'
         },
+        // envio de los campos que solicita la api de petfinder para generar un access token
         body: JSON.stringify({
             grant_type: 'client_credentials',
             client_id: 'V2ZwO4ktGa5dnNkXzSYEiuLPGxJvs2jqaKwWT9cpVcVSMsYlfm',
@@ -66,9 +69,8 @@ const refreshTokenGenerator = async () => {
     const data = await resp.json();
     // funcion para llamar la carga de los perros
     getDataDogs(data.access_token);
-
+    // cuando se genere un nuevo access token se guarda en el local storage para poder utilizarlo en otras paginas, por ej la del perfil del animal
     localStorage.setItem('token', data.access_token);
-
 }
 
 // Listener en el cual se muestra u oculta el sidebar en el responsive

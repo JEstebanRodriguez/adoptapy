@@ -70,6 +70,7 @@ const setElementsAtDom = (animalParam) => {
                 <button class="btn btn--primary" id="adopt-form">Formulario de adopción</button>
             </div>`;
     animalProfile.innerHTML = el;
+    // Evento click para mostrar el modal de simulacion de recabacion de datos para una adopcion
     document.getElementById('adopt-form').addEventListener('click', () => {
         modal.style.display = 'grid';
     });
@@ -82,7 +83,7 @@ const getAnimalById = async () => {
         }
     });
     const { animal } = await resp.json();
-    console.log(animal);
+    // funcion para construir el cuerpo del perfil del animal dentro del dom
     setElementsAtDom(animal);
 }
 // Listener en el cual se muestra u oculta el sidebar en el responsive
@@ -92,17 +93,19 @@ headerBurger.addEventListener('click', () => {
 });
 // Listener donde se obtiene el evento de scroll de la pagina y aplica el blur al header
 document.addEventListener('scroll', () => (scrollY >= 280) ? header.classList.add('header--mask') : header.classList.remove('header--mask'));
+// Cuando se carga el dom se llama la funcion para obtener el animal por su id
 document.addEventListener('DOMContentLoaded', () => {
     getAnimalById();
 });
-
+// Evento del boton de cancelar dentro del formulario de adopcion que oculta el modal
 cancelAdoptBtn.addEventListener('click', (e) => {
     e.preventDefault();
     modal.style.display = 'none';
 });
-
+// Evento que captura el envio del formulario de adopcion
 adoptForm.addEventListener('submit', e => {
     e.preventDefault();
+    // Libreria sweetalert para notificacion de exito para feedback al usuario
     Swal.fire({
         position: 'top-end',
         icon: 'success',
@@ -111,5 +114,6 @@ adoptForm.addEventListener('submit', e => {
         showConfirmButton: false,
         timer: 2000
     });
+    // Se oculta el modal
     modal.style.display = 'none';
 });
